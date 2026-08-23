@@ -1,0 +1,56 @@
+/* 屏幕：浅灰画布 + 居中简历卡片 */
+.resume-page { background: #f4f5f7; min-height: 100vh; padding: 36px 20px 56px; }
+.resume {
+  max-width: 820px; margin: 0 auto; background: #fff; border-radius: 12px;
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.07); padding: 40px 44px;
+  box-sizing: border-box;
+  font-family: 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+  color: #222; font-size: 13px; line-height: 1.6;
+  -webkit-print-color-adjust: exact; print-color-adjust: exact;
+}
+.resume-controls { max-width: 820px; margin: 0 auto 16px; text-align: right; }
+.print-btn {
+  display: inline-flex; align-items: center; gap: 6px; padding: 8px 14px;
+  background: #162660; color: #fff; border: none; border-radius: 8px;
+  font-size: 14px; cursor: pointer; font-family: inherit;
+}
+.print-btn:hover { opacity: 0.9; }
+
+/* 顶部 */
+.resume .header { display: flex; justify-content: space-between; align-items: flex-start; }
+.resume .name { font-size: 2.1em; font-weight: 700; letter-spacing: 2px; margin-bottom: 0.5em; }
+.resume .info { font-size: 0.95em; color: #666; margin-bottom: 0.7em; }
+.resume .intent { display: flex; flex-wrap: wrap; gap: 1.6em; font-size: 0.95em; }
+.resume .intent b { color: #222; font-weight: 600; }
+.resume .header-right { display: flex; align-items: flex-start; }
+.resume .caption { font-size: 1.05em; color: #aaa; margin-top: 0.4em; letter-spacing: 1px; }
+
+/* 板块 */
+.resume .section { margin-top: 1.2em; }
+.resume .sec-title { display: flex; align-items: center; font-size: 1.05em; font-weight: 700; color: #162660; margin-bottom: 0.6em; }
+.resume .sec-title .bar { width: 4px; height: 1.15em; background: #162660; margin-right: 0.6em; border-radius: 2px; }
+.resume ol.sec-list { padding-left: 1.5em; }
+.resume ol.sec-list li { margin-bottom: 0.4em; }
+
+/* 项目 / 教育头部 */
+.resume .proj-head { display: flex; justify-content: space-between; align-items: baseline; margin-top: 0.8em; margin-bottom: 0.4em; flex-wrap: wrap; }
+.resume .proj-title { font-size: 1.05em; font-weight: 700; color: #222; }
+.resume .proj-title .proj-type { font-weight: 400; color: #888; font-size: 0.92em; margin-left: 0.6em; }
+.resume .proj-date { font-size: 0.92em; color: #888; }
+.resume .proj-body p { margin-bottom: 0.35em; }
+.resume .proj-body b { font-weight: 600; }
+.resume ul.dot { list-style: disc; padding-left: 1.5em; margin-top: 0.25em; }
+.resume ul.dot li { margin-bottom: 0.25em; }
+.resume .certs { display: flex; flex-wrap: wrap; gap: 1.6em; }
+
+/* 打印：转 A4，去掉卡片装饰 */
+@media print {
+  @page { size: A4; margin: 0; }
+  html, body { background: #fff !important; }
+  .resume-page { padding: 0; background: #fff; }
+  .resume {
+    max-width: none; margin: 0; border-radius: 0; box-shadow: none;
+    padding: 11mm 14mm; font-size: 10.5px;
+  }
+  .resume-controls { display: none; }
+}

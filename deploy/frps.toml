@@ -1,0 +1,9 @@
+# frp 服务端配置（跑在阿里云服务器上）
+bindPort = 7000
+
+auth.method = "token"
+auth.token = "fa734d776b9a17a957f00e6e8c47346e"
+
+# 日志到 stdout，方便 docker logs 查看
+log.to = "/dev/stdout"
+log.level = "info"
